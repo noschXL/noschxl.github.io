@@ -5,6 +5,9 @@
 
 ---
 
+# Other:
+ - [Sources](#sources)
+---
 # The Malware
 ## Stage 1: The Minecraft Mod
 
@@ -49,3 +52,13 @@ public class Secret {
     }
 }
 ```
+
+looking into the Main function at dev/majanito/NewMod.class gives:
+[Dump](#sources)
+
+---
+
+# sources
+## Malware Analysis
+ - [Original Virus](./assets/stage1/Malware.jar)
+ - [dev/majanito/NewMod.class dump](./assets/stage1/unpacked/dev/majanito/NewMod.class)
