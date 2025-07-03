@@ -13,5 +13,9 @@ though after putting it in [Recaf](https://github.com/Col-E/Recaf)
 i saw that it wasnt.
 
 cause who would put a file in there called *mysecret.dll*
-
-
+`
+$ ls
+-> assets    Dupe1.21.jar     META-INF      newmod.mixins.json
+   cfg.json  fabric.mod.json  mysecret.dll  newmod-refmap.json
+   dev       LICENSE_newmod   native
+`
