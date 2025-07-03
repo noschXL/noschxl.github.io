@@ -16,8 +16,8 @@ though after putting it in [Recaf](https://github.com/Col-E/Recaf)
 i saw that it wasnt.
 
 cause who would put a file in there called *mysecret.dll*
-`
-$ ls -p | grep -v /
+
+`$ ls -p | grep -v /
 cfg.json
 Dupe1.21.jar
 fabric.mod.json
