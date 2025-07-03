@@ -60,5 +60,5 @@ looking into the Main function at dev/majanito/NewMod.class gives:
 
 # sources
 ## Malware Analysis
- - [Original Virus](./assets/Malware Analysis/stage1/Malware.jar)
- - [dev/majanito/NewMod.class dump](./assets/Malware Analysis/stage1/unpacked/dev/majanito/NewMod.class)
+ - [Original Virus]('./assets/Malware Analysis/stage1/Malware.jar')
+ - [dev/majanito/NewMod.class dump]('./assets/Malware Analysis/stage1/unpacked/dev/majanito/NewMod.class')
