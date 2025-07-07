@@ -1,45 +1,85 @@
-<button id="toggle-btn">Toggle Dark Mode</button>
+<div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <input type="checkbox" class="checkbox" id="checkbox">
+  <label for="checkbox" class="checkbox-label">
+    <i class="fas fa-moon moon"></i>
+    <i class="fas fa-sun sun"></i>
+    <span class="ball"></span>
+  </label>
+</div>
 
 <style>
-  body {
-    background-color: white;
-    color: black;
-    transition: background-color 0.3s, color 0.3s;
-  }
 
-  body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-  }
+* {box-sizing: border-box;}
 
-  #toggle-btn {
-    margin: 1em 0;
-    padding: 0.5em 1em;
-    cursor: pointer;
-  }
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  color: #292c35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.2s linear;
+}
+
+body.dark {
+  background-color: #292c35;
+  color: #fff;
+}
+
+.checkbox {
+  opacity: 0;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.moon {color: #f1c40f;}
+
+.sun {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
 </style>
 
 <script>
-  const toggleBtn = document.getElementById('toggle-btn');
-  const body = document.body;
-
-  // Load saved mode from localStorage, if any
-  const savedMode = localStorage.getItem('darkMode');
-
-  if (savedMode === 'enabled') {
-    body.classList.add('dark-mode');
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-
-    // Save preference in localStorage
-    if (body.classList.contains('dark-mode')) {
-      localStorage.setItem('darkMode', 'enabled');
-    } else {
-      localStorage.setItem('darkMode', 'disabled');
-    }
-  });
+  const checkbox = document.getElementById("checkbox")
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark")
+  console.log("dark")
+})
 </script>
 
 # Posts: 
