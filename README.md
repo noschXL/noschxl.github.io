@@ -31,6 +31,18 @@ body.dark {
   color: #fff;
 }
 
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  color: #292c35;
+  margin: 1em 0;
+}
+
+body.dark hr {
+  border-top: 1px solid #555;
+  color: #fff;
+}
+
 .checkbox {
   opacity: 0;
   position: fixed;
@@ -44,13 +56,14 @@ body.dark {
   height: 26px;
   border-radius: 50px;
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  top: 0;
+  right: 0;
   padding: 5px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transform: scale(0.7);
 }
 
 .moon {color: #f1c40f;}
