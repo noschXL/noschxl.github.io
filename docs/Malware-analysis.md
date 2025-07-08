@@ -93,7 +93,7 @@ body.dark {
 </style>
 
 <script>
-let state = localStorage.getItem("dark");
+  let state = localStorage.getItem("dark");
 
 if (state === null) {
   state = "true";
@@ -103,6 +103,7 @@ if (state === null) {
 const isDark = state === "true";
 
 const checkbox = document.getElementById("checkbox");
+const balls = document.querySelectorAll('.checkbox-label .ball');
 checkbox.checked = isDark;
 
 if (isDark) {
@@ -110,6 +111,8 @@ if (isDark) {
 }
 
 checkbox.addEventListener("change", () => {
+  document.body.classList.add("ready");
+  balls.forEach(ball => ball.classList.add('ready'));
   localStorage.setItem("dark", checkbox.checked);
   document.body.classList.toggle("dark");
 });
