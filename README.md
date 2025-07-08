@@ -1,4 +1,13 @@
+
 <div>
+  <script>
+    try {
+      const state = localStorage.getItem("dark");
+      if (state === "true") {
+        document.documentElement.classList.add("dark");
+      }
+    } catch (e) {}
+  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <input type="checkbox" class="checkbox" id="checkbox">
   <label for="checkbox" class="checkbox-label">
@@ -20,26 +29,18 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   min-height: 100vh;
   margin: 0;
   transition: background 0.2s linear;
 }
 
+body:not(.ready) {
+  transition: none;
+}
+
 body.dark {
   background-color: #292c35;
-  color: #fff;
-}
-
-hr {
-  border: none;
-  border-top: 1px solid #ccc;
-  color: #292c35;
-  margin: 1em 0;
-}
-
-body.dark hr {
-  border-top: 1px solid #555;
   color: #fff;
 }
 
@@ -66,6 +67,7 @@ body.dark hr {
   transform: scale(0.7);
 }
 
+
 .moon {color: #f1c40f;}
 
 .sun {color: #f39c12;}
@@ -79,6 +81,9 @@ body.dark hr {
   top: 2px;
   border-radius: 50%;
   transition: transform 0.2s linear;
+}
+.checkbox:checked + .checkbox-label .ball:not(.ready) {
+    transition: none;
 }
 
 .checkbox:checked + .checkbox-label .ball {
