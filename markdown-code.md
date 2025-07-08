@@ -76,9 +76,25 @@ body.dark {
 </style>
 
 <script>
-  const checkbox = document.getElementById("checkbox")
+let state = localStorage.getItem("dark");
+
+if (state === null) {
+  state = "true";
+  document.body.classList.toggle("dark");
+}
+
+const isDark = state === "true";
+
+const checkbox = document.getElementById("checkbox");
+checkbox.checked = isDark;
+
+if (isDark) {
+  document.body.classList.add("dark");
+}
+
 checkbox.addEventListener("change", () => {
-  document.body.classList.toggle("dark")
-  console.log("dark")
-})
+  localStorage.setItem("dark", checkbox.checked);
+  document.body.classList.toggle("dark");
+});
+
 </script>
